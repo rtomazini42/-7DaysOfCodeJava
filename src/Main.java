@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
-		String chave = "sua_chave";
+		String chave = "k_f7y3cnv3";
 		String site = "https://imdb-api.com/en/API/Top250Movies/" + chave;
 		
 			HttpRequest request = HttpRequest
@@ -29,24 +29,39 @@ public class Main {
            String[] moviesArray = topMovies.split(",,");
            
 		   System.out.println(response.body());
-		   ArrayList<String> titulos_filmes = new ArrayList();
-		   ArrayList<String> imagens_filmes = new ArrayList();
+		   ArrayList<Filme> filmes = new ArrayList();
 		   //System.out.println(moviesArray[0]);
 		   for(int n=0; n<250;n++) {
-			   //System.out.println(moviesArray[n]);
+			   Filme filme = new Filme();
+			   System.out.println(moviesArray[n]);
 			   int fimDoTitulo = moviesArray[n].indexOf("fullTitle");
 			   String titulo = moviesArray[n].substring(39, fimDoTitulo-2);
+			   filme.setTitulo(titulo);
+			   
 			   int inicioImagem = moviesArray[n].indexOf("image") + 7;
 			   int fimImagem = moviesArray[n].indexOf("crew") - 2;
 			   String imagem = moviesArray[n].substring(inicioImagem, fimImagem);
-			   titulos_filmes.add(titulo);
-			   imagens_filmes.add(imagem);
+			   filme.setUrlImage(imagem);
+			   
+			   int inicioRatio = moviesArray[n].indexOf("imDbRating") + 13;
+			   int fimRatio = inicioRatio +3;
+			   String ratio = moviesArray[n].substring(inicioRatio, fimRatio);
+			   double ratioDouble = Double.parseDouble(ratio);
+			   //System.out.println(ratioDouble);
+			   filme.setRating(ratioDouble);
+			   
+			   int inicioAno = moviesArray[n].indexOf("year") + 7;
+			   int fimAno = inicioAno +4;
+			   String ano = moviesArray[n].substring(inicioAno, fimAno);
+			   int anoInt = Integer.parseInt(ano);
+			   filme.setYear(anoInt);
+			   filmes.add(filme);
 			   System.out.println("Adicionado:" + titulo);
 		   }
-		   	int n = titulos_filmes.size();
+		   	int n = filmes.size();
 		    for (int i=0; i<n; i++) {
-		      System.out.println("Titulo: " + titulos_filmes.get(i));
-		      System.out.println("imagem: " + imagens_filmes.get(i));
+		      System.out.println("Titulo: " + filmes.get(i).getTitulo());
+		      System.out.println("Titulo: " + filmes.get(i).getYear());
 		      
 		    }
 

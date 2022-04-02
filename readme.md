@@ -5,5 +5,10 @@ Desafio feito pela Alura
 - Dia 1
   Consumir API do IMDB
 
+- Dia 2
+  Tratar dados recebidos
+
+- Dia 3
+  Colocar dados em uma classe objeto "Filme"
 
 

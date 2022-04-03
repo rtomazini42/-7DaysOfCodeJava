@@ -12,3 +12,7 @@ Desafio feito pela Alura
   Colocar dados em uma classe objeto "Filme"
 
 
+- Dia 4
+  Gerar o HTML com todos os filmes puxados.
+
+

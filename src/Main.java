@@ -33,9 +33,12 @@ public class Main {
 		   //System.out.println(moviesArray[0]);
 		   for(int n=0; n<250;n++) {
 			   Filme filme = new Filme();
-			   System.out.println(moviesArray[n]);
+			   //System.out.println(moviesArray[n]);
+			   int inicioDoTitulo = moviesArray[n].indexOf("Title");
 			   int fimDoTitulo = moviesArray[n].indexOf("fullTitle");
-			   String titulo = moviesArray[n].substring(39, fimDoTitulo-2);
+			   String titulo = moviesArray[n].substring(38, fimDoTitulo-3);
+			   titulo = titulo.replace(":", " ");
+			   titulo = titulo.replace("\"", " ");
 			   filme.setTitulo(titulo);
 			   
 			   int inicioImagem = moviesArray[n].indexOf("image") + 7;
@@ -56,18 +59,11 @@ public class Main {
 			   int anoInt = Integer.parseInt(ano);
 			   filme.setYear(anoInt);
 			   filmes.add(filme);
-			   System.out.println("Adicionado:" + titulo);
+			   //System.out.println("Adicionado:" + titulo);
 		   }
-		   	int n = filmes.size();
-		    for (int i=0; i<n; i++) {
-		      System.out.println("Titulo: " + filmes.get(i).getTitulo());
-		      System.out.println("Titulo: " + filmes.get(i).getYear());
-		      
-		    }
-
-           System.out.println(site);
-		System.out.println("Rodando");
 		   
+		   HTMLGenerator g = new HTMLGenerator();
+		   g.generate(filmes);
 	}
 	
 	

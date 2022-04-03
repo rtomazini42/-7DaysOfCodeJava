@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
-		String chave = "k_f7y3cnv3";
+		String chave = "sua_chave";
 		String site = "https://imdb-api.com/en/API/Top250Movies/" + chave;
 		
 			HttpRequest request = HttpRequest

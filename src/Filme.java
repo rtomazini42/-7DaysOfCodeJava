@@ -1,5 +1,5 @@
 
-public class Filme {
+public class Filme implements Content{
 	
 	private String titulo;
 	private String urlImage;

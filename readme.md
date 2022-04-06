@@ -15,4 +15,11 @@ Desafio feito pela Alura
 - Dia 4
   Gerar o HTML com todos os filmes puxados.
 
+- Dia 5
+  Encapsulamento.
+
+
+- Dia 6
+  Interfaces criadas.
+
 

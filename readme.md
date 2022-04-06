@@ -1,6 +1,6 @@
 ## 7DaysOfCode
 7DaysOfCode Challenge that consumes an API from IMDB: [Top250Movies](https://imdb-api.com/api#Top250Movies-header)
-Desafio feito pela Alura
+Desafio feito por Paulo Silveira
 
 - Dia 1
   Consumir API do IMDB

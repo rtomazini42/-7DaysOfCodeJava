@@ -23,3 +23,5 @@ Desafio feito pela Alura
   Interfaces criadas.
 
 
+- Dia 7
+  Método de ordenamento feito.
